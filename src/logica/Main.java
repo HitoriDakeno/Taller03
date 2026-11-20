@@ -117,14 +117,100 @@ public class Main
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	
+	
+	/**
+	 * 
+	 * Muestra el catalogo completo de monstruos,
+	 * incluyendo sus habilidades y disponibilidad.
+	 * 
+	 */
 
 
 	private static void mostrarCatalogo()
 	{
-		// TODO Auto-generated method stub
+		ArratList<Monstruo> monstruos = system.obtenerMonstruos();
+		
+		System.out.println();
+		
+		System.out.println(" //// CATÁLOGO DE MONSTRUOS \\\\");
+		
+		for(int i = 0; i < monstruos.size(); i++) {
+			
+			Monstruo monstruo = monstruos.get(i);
+			
+			String estado;
+			
+			if(system.estaMonstruoDisponible(monstruo)) {
+				estado = "DISPONIBLE";
+				
+			} else {
+				
+				estado = "USADO";
+			}
+			
+			System.out.println((i+1) + ") "+ monstruo + " | Habilidades: " + obtenerNombresHabilidades(monstruo) + " | " + estado);
+			
+			
+		}
 		
 	}
+	
+	
+	/**
+	 * 
+	 * Obtiene los nombres de las habilidades de un monstruo.
+	 * 
+	 * @param monstruo monstruo consultado
+	 * @return lista de habilidades en formato de texto
+	 */
 
+	private static String obtenerNombreHabilidades(Monstruo monstruo) {
+		
+		String habilidades = "";
+		
+		if(monstruo instanceof Mordedor) {
+			habilidades += "Morder";
+			
+		}
+		
+		if(monstruo instanceof Volador) {
+			if(habilidades.length() > 0) {
+				habilidades += ", ";
+			}
+			
+			habilidades += "Volar";
+		}
+		
+		if(monstruo instanceof Regenerable) {
+			if(habilidades.length() > 0) {
+				habilidades += ", ";
+			}
+			
+			habilidades += "Regenerarse";
+		}
+		
+		if(monstruo instanceof Furioso) {
+			if(habilidades.length() > 0) {
+				habilidades += ", ";
+			}
+			
+			habilidades += "Enfurcerse";
+		}
+		
+		return habilidades;
+		
+	}
+	
+	
+	/**
+	 * Muestra los resultados de los minijuegos realizados
+	 * durante la sesion actual.
+	 * 
+	 * 
+	 */
 
 	private static void mostrarHistorial()
 	{
@@ -145,7 +231,7 @@ public class Main
 			RegistroPartida registro = historial.get(i);
 			
 			System.out.println((i+1) + ". "+ registro.getNombreMiniJuego() + " | " + registro.getTipoMonstruo() + " | Habilidad: " + registro.getHabilidad() + " | " + registro.getPuntaje() + " pts" );
-			
+		
 			
 			
 		}
