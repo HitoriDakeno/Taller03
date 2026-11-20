@@ -6,6 +6,7 @@ public class Main
 		
 		System.out.println("inicio de taller 3");
 		System.out.println("xd");
+		System.out.println("xd");
 	}
 
 }
