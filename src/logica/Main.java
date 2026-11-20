@@ -128,9 +128,30 @@ public class Main
 
 	private static void mostrarHistorial()
 	{
-		// TODO Auto-generated method stub
+		LinkedList<RegistroPartida> historial = system.obtenerHistorial();
+		
+		System.out.println();
+		
+		System.out.println(" //// HISTORIAL DE LA SESIÓN \\\\");
+		
+		if(historial.size() == 0) {
+			
+			System.out.println("Todabia no has jugado ningún minijuego.");
+			return;
+		}
+		
+		for(int i = 0; i < historial.size(); i++) {
+			
+			RegistroPartida registro = historial.get(i);
+			
+			System.out.println((i+1) + ". "+ registro.getNombreMiniJuego() + " | " + registro.getTipoMonstruo() + " | Habilidad: " + registro.getHabilidad() + " | " + registro.getPuntaje() + " pts" );
+			
+			
+			
+		}
 		
 	}
+	
 	
 	
 	/**
@@ -163,6 +184,9 @@ public class Main
 			System.out.println((i+1) + ". "+ jugador.getNombre() + " - " + jugador.getPuntajeMaximo()+ " puntos");
 			
 		}
+		
+		System.out.println("Puntaje acumulado: " + system.getPuntajeAcumulado() + " pts");
+		
 		
 	}
 
