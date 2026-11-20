@@ -105,8 +105,33 @@ public class Main
 	
 		System.out.println("¡GRACIAS POR JUGAR!");
 		lector.close();
-		
-		
+	}
+	
+	
+	/**
+	 * 
+	 * Solicita un numero entero al usuario.
+	 * 
+	 * si la entrada no es valida, vuelve a solicitarla
+	 * sin provocar que el programa termine.
+	 * 
+	 * @param msj mensaje que se mostrara antes de leer
+	 * @return numero entero ingresado
+	 */
+
+
+	private static int leerEntero(String msj)
+	{
+		while(true) {
+			System.out.println(msj);
+			String entrada = lector.nextLine();
+			
+			try {
+				return Integer.parseInt(entrada);
+			} catch(NumberFormatException e){
+				System.out.println("Debe ingresar un numero. Intente nuevamente.");
+			}
+		}
 	}
 
 }
