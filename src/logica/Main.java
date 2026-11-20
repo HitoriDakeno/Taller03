@@ -3,7 +3,9 @@
 package logica;
 
 import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -129,11 +131,38 @@ public class Main
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	/**
+	 * 
+	 * Muestra el ranking de jugadores.
+	 * EL sistema entrega la lista previamente ordenada.
+	 * 
+	 */
 
 
 	private static void mostrarRanking()
 	{
-		// TODO Auto-generated method stub
+		ArrayList<Jugador> ranking = system.obtenerRanking();
+		
+		System.out.println();
+		
+		System.out.println(" //// RANKING \\\\");
+		
+		if(ranking.size() == 0) {
+			
+			System.out.println("Todavia no hay jugadores registrados.");
+			return;
+			
+		}
+		
+		for(int i = 0; i < ranking.size(); i++) {
+			
+			Jugador jugador = ranking.get(i);
+			
+			System.out.println((i+1) + ". "+ jugador.getNombre() + " - " + jugador.getPuntajeMaximo()+ " puntos");
+			
+		}
 		
 	}
 
