@@ -2,6 +2,8 @@
 
 package logica;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -108,6 +110,89 @@ public class Main
 	}
 	
 	
+	private static void miniJuegos()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private static void mostrarCatalogo()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private static void mostrarHistorial()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private static void mostrarRanking()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	
+	/**
+	 * 
+	 *Termina la sesion actual y guarda los registros
+	 *cuando el jugador realizo al menos un minijuego
+	 * 
+	 */
+	
+	private static void terminarSesion()
+	{
+		System.out.println();
+		System.out.println("Sesion terminada. Puntaje total: " + system.getPuntajeAcumulado() + " puntos");
+		String msj = system.terminarSesion();
+		System.out.println(msj);
+		
+		if(system.seJugoEnLaSesion()) {
+			guardarRegistros();
+		}
+
+	}
+	
+
+	/**
+	 * 
+	 * Reescribe el archivo Registros.txt con los jugadores
+	 * y sus respectivos puntajes maximos.
+	 * 
+	 */
+
+	private static void guardarRegistros()
+	{
+		try {
+			FileWriter escritor = new FileWriter(archRegistros);
+			BufferedWriter buffer = new BufferedWriter(escritor);
+			
+			ArrayList<Jugador> jugadores = system.obtenerJugadores();
+			
+			for(int i = 0; i < jugadores.size(); i++) {
+				Jugador jugador = jugadores.get(i);
+				buffer.write(jugador.getNombre() + ";" + jugador.getPuntajeMaximo());
+				buffer.newLine();
+				
+			}
+			buffer.close();
+			
+			System.out.println("Resgistros guardados en "+archRegistros);
+			
+
+		} catch(IOException e) {
+			System.out.println("No se pudieron guardar los registros. ");
+		}
+	}
+
+
 	/**
 	 * 
 	 * Solicita un numero entero al usuario.
