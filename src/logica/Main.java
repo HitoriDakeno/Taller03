@@ -112,10 +112,40 @@ public class Main
 	}
 	
 	
+	private static void mostrarMenuPrincipal()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	private static void miniJuegos()
 	{
 		// TODO Auto-generated method stub
 		
+	}
+	
+	/**
+	 * 
+	 * Convierte el nombre de una interfaz al nombre
+	 * que se mostrara en el menu.
+	 * 
+	 * @param habilidad nombre de la interfaz
+	 * @return nombre visible de la habilidad
+	 */
+	private static String nombreHabilidad(String habilidad) {
+		
+		if(habilidad.equals("Mordedor)")) {
+			return "Morder";
+			
+		} else if(habilidad.equals("Voldor")) {
+			
+			return "Volar";
+		} else if(habilidad.equals("Regenerable")) {
+			return "Regenerarse";
+		}
+		
+		return "Enfurecerse";
 	}
 	
 	
