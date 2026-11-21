@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import sun.jvm.hotspot.tools.SysPropsDumper;
 
 
 /**
@@ -79,7 +78,7 @@ public class Main
 				switch(opcion) {
 				
 				case 1:
-					menuMiniJuegos();
+					menuMinijuegos();
 					break;
 				case 2:
 					mostrarCatalogo();
