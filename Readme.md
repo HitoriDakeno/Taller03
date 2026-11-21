@@ -50,7 +50,7 @@ Taller03/
 ├── Monstruos.txt
 ├── Registros.txt
 ├── README.md
-└── DiagramaSpookySeason.png
+└── DiagramaTaller03.drawio.pdf
 ```
 
 ## Paquetes principales
