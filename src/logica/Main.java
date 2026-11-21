@@ -125,13 +125,41 @@ public class Main
 		
 	}
 	
+	
+	/**
+	 * Ejecuta la habilidad seleccionada meadiante un cast
+	 * a la interfaz correspondiente.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * @param monstruo monstruo que utiliza la habilidad
+	 * @param habilidad habilidad seleccionada
+	 * @return mensaje generado por la habilidad
+	 */
+	
+	private static String ejecutarHabilidad(Monstruo monstruo, String habilidad) {
+		
+		if(habilidad.equals("Mordedor")) {
+			return ((Mordedor) monstruo).morder();
+		} else if(habilidad.equals("Volador")) {
+			return ((Volador) monstruo).volar();
+		} else if(habilidad.equals("Regenerable")) {
+			return ((Regenerable) monstruo).regenerarse();
+		} else if(habilidad.equals("Furioso")) {
+			return ((Furioso) monstruo).enfurecerse();
+		}
+		
+		return "";
+	}
+	
 	/**
 	 * 
 	 * Convierte el nombre de una interfaz al nombre
 	 * que se mostrara en el menu.
 	 * 
 	 * @param habilidad nombre de la interfaz
-	 * @return nombre visible de la habilidad
+	 * @return nombre visible de la habili	dad
 	 */
 	private static String nombreHabilidad(String habilidad) {
 		
