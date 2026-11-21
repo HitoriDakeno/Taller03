@@ -1,6 +1,6 @@
 package dominio;
 
-import Taller03.visitor.VisitorMinijuego;
+import visitor.VisitorMinijuego;
 
 /**
  * Clase abstracta que representa las características

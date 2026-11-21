@@ -1,5 +1,7 @@
 package visitor;
 
+import dominio.*;
+
 /**
  * Define las operaciones que debe realizar un visitante
  * sobre cada uno de los tipos de monstruos.

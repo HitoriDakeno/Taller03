@@ -1,6 +1,6 @@
 package dominio;
 
-import Taller03.visitor.VisitorMinijuego;
+import visitor.VisitorMinijuego;
 
 /**
  * Representa el minijuego Sobrevivir al Amanecer.

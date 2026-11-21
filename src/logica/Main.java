@@ -8,9 +8,10 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
-
+import dominio.*;
 
 /**
  * Clase principal del programa
@@ -48,7 +49,7 @@ public class Main
 		
 		cargarMonstruos();
 		
-		if(system.getCantidadMostruos() == 0)
+		if(system.getCantidadMonstruos() == 0)
 		{
 			System.out.println("No hay mostruos válidos!");
 			System.out.println("finalizando programa.");
@@ -56,8 +57,8 @@ public class Main
 		}
 		
 		cargarRegistros();
-		
-		System.out.println("- "+system.getCantidadMostruos() + " monstruos cargados desde "+archMonstruos);
+		System.out.println("");
+		System.out.println("- "+system.getCantidadMonstruos() + " monstruos cargados desde "+archMonstruos);
 		
 		System.out.println("- "+system.getCantidadJugadores() + " jugadores cargados desde "+archRegistros);
 		
@@ -135,7 +136,7 @@ public class Main
 		
 		while(nombre.length() == 0 || nombre.indexOf(";") != -1) {
 			
-			System.out.println("Ingrese su nombre de usuario: ");
+			System.out.print("Ingrese su nombre de usuario: ");
 			
 			nombre = lector.nextLine();
 			
@@ -197,7 +198,7 @@ public class Main
 				
 				if(!system.agregarRegistro(campos)) {
 					
-					System.out.println("linea " + numLine + "de "+ archRegistros+ " descartada: " + linea);
+					System.out.println("linea " + numLine + " de "+ archRegistros+ " descartada: " + linea);
 				}
 		
 			}
@@ -241,7 +242,7 @@ public class Main
 				
 				if(!system.agregarMonstruo(campos)) {
 					
-					System.out.println("linea " + numLine + "de "+ archMonstruos+ " descartada: " + linea);
+					System.out.println("linea " + numLine + " de "+ archMonstruos+ " descartada: " + linea);
 				}
 		
 			}
@@ -318,11 +319,11 @@ public class Main
 
             } else if (opcion < 1 || opcion > 4) {
 
-                System.out.println("[!] Opción fuera de rango.");
+                System.out.println("Opción fuera de rango.");
 
             } else if (system.estaMinijuegoJugado(opcion - 1)) {
 
-                System.out.println("[!] Ya jugaste "+ system.obtenerMinijuego(opcion - 1).getNombre()+ " en esta sesión.");
+                System.out.println("Ya jugaste "+ system.obtenerMinijuego(opcion - 1).getNombre()+ " en esta sesión.");
 
             } else {
 
@@ -441,7 +442,7 @@ public class Main
 
         } else {
 
-            System.out.println("[!] No se pudo registrar el resultado.");
+            System.out.println("No se pudo registrar el resultado.");
 
         }
 
@@ -478,32 +479,32 @@ public class Main
 			habilidades.add("Furioso");
 		}
 		
-		
-		System.out.println();
-		
-		System.out.println("Quieres usar una habilidad?");
-		
-		for(int i = 0; i < habilidades.size(); i++) {
-			System.out.println((i+1) + ") "+nombreHabilidad(habilidades.get(i)));
-			
-		}
-		
-		System.out.println("0) No usar habilidad");
-		
-		int opcion = leerEntero("> ");
-		
-		if(opcion == 0) {
-			return "Ninguna";
-		}
-		
-		if(opcion < 1 || opcion > habilidades.size()) {
-			
-			System.out.println("Opcion fuera de rango.");
-			return "Ninguna";
-		}
-		
-		return habilidades.get(opcion-1);
-		
+		int opcion;
+
+	    do {
+	        System.out.println();
+	        System.out.println("Quieres usar una habilidad?");
+
+	        for(int i = 0; i < habilidades.size(); i++) {
+	            System.out.println((i+1) + ") " + nombreHabilidad(habilidades.get(i)));
+	        }
+
+	        System.out.println("0) No usar habilidad");
+
+	        opcion = leerEntero("> ");
+
+	        if(opcion < 0 || opcion > habilidades.size()) {
+	            System.out.println("Opcion fuera de rango. Intente nuevamente.");
+	        }
+
+	    } while(opcion < 0 || opcion > habilidades.size());
+
+	    if(opcion == 0) {
+	        return "Ninguna";
+	    }
+
+	    return habilidades.get(opcion-1);
+	
 	}
 	
 	
@@ -548,7 +549,7 @@ public class Main
 		if(habilidad.equals("Mordedor)")) {
 			return "Morder";
 			
-		} else if(habilidad.equals("Voldor")) {
+		} else if(habilidad.equals("Volador")) {
 			
 			return "Volar";
 		} else if(habilidad.equals("Regenerable")) {
@@ -571,7 +572,7 @@ public class Main
 
 	private static void mostrarCatalogo()
 	{
-		ArratList<Monstruo> monstruos = system.obtenerMonstruos();
+		ArrayList<Monstruo> monstruos = system.obtenerMonstruos();
 		
 		System.out.println();
 		
@@ -607,7 +608,7 @@ public class Main
 	 * @return lista de habilidades en formato de texto
 	 */
 
-	private static String obtenerNombreHabilidades(Monstruo monstruo) {
+	private static String obtenerNombresHabilidades(Monstruo monstruo) {
 		
 		String habilidades = "";
 		
@@ -637,7 +638,7 @@ public class Main
 				habilidades += ", ";
 			}
 			
-			habilidades += "Enfurcerse";
+			habilidades += "Enfurecerse";
 		}
 		
 		return habilidades;
@@ -670,11 +671,13 @@ public class Main
 			
 			RegistroPartida registro = historial.get(i);
 			
-			System.out.println((i+1) + ". "+ registro.getNombreMiniJuego() + " | " + registro.getTipoMonstruo() + " | Habilidad: " + registro.getHabilidad() + " | " + registro.getPuntaje() + " pts" );
+			System.out.println((i+1) + ". "+ registro.getNombreMinijuego() + " | " + registro.getTipoMonstruo() + " | Habilidad: " + registro.getHabilidad() + " | " + registro.getPuntaje() + " pts" );
 		
 			
 			
 		}
+		
+		System.out.println("Puntaje acumulado: "+system.getPuntajeAcumulado() + " pts");
 		
 	}
 	
@@ -763,7 +766,7 @@ public class Main
 			}
 			buffer.close();
 			
-			System.out.println("Resgistros guardados en "+archRegistros);
+			System.out.println("Registros guardados en "+archRegistros);
 			
 
 		} catch(IOException e) {
@@ -787,7 +790,7 @@ public class Main
 	private static int leerEntero(String msj)
 	{
 		while(true) {
-			System.out.println(msj);
+			System.out.print(msj);
 			String entrada = lector.nextLine();
 			
 			try {

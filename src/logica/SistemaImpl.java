@@ -1,5 +1,9 @@
 package logica;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import dominio.*;
 /**
  * Implementa las operaciones de la interfaz Sistema.
  *
@@ -18,7 +22,7 @@ public class SistemaImpl implements ISistema {
     private LinkedList<RegistroPartida> historial;
 
     /** Arreglo que almacena los cuatro minijuegos. */
-    private Minijuego[] minijuegos;
+    private MiniJuego[] minijuegos;
 
     /** Indica qué monstruos ya fueron utilizados. */
     private boolean[] monstruosUsados;
@@ -37,13 +41,13 @@ public class SistemaImpl implements ISistema {
      *
      * Inicializa las colecciones y los cuatro minijuegos.
      */
-    public SistemaImplementado() {
+    public SistemaImpl() {
 
         monstruos = new ArrayList<Monstruo>();
         jugadores = new ArrayList<Jugador>();
         historial = new LinkedList<RegistroPartida>();
 
-        minijuegos = new Minijuego[4];
+        minijuegos = new MiniJuego[4];
 
         minijuegos[0] = new CarreraCementerio();
         minijuegos[1] = new CazaCalabazas();
@@ -181,8 +185,7 @@ public class SistemaImpl implements ISistema {
     /**
      * Comprueba que los atributos generales estén dentro de sus rangos.
      */
-    private boolean validarBase(int vida, int velocidad,
-                                int fuerza, int resistencia) {
+    private boolean validarBase(int vida, int velocidad, int fuerza, int resistencia) {
 
         return validarRango(vida, 1, 200)
                 && validarRango(velocidad, 1, 100)
@@ -391,7 +394,7 @@ public class SistemaImpl implements ISistema {
      * @return minijuego solicitado o null si el índice no es válido
      */
     @Override
-    public Minijuego obtenerMinijuego(int indice) {
+    public MiniJuego obtenerMinijuego(int indice) {
 
         if (indice < 0 || indice >= minijuegos.length) {
 
@@ -431,8 +434,7 @@ public class SistemaImpl implements ISistema {
 
         for (int i = 0; i < historial.size(); i++) {
 
-            if (historial.get(i).getNombreMinijuego()
-                    .equals(minijuegos[indice].getNombre())) {
+            if (historial.get(i).getNombreMinijuego().equals(minijuegos[indice].getNombre())) {
 
                 return historial.get(i).getPuntaje();
 
@@ -490,8 +492,7 @@ public class SistemaImpl implements ISistema {
 
         double multiplicador = 1.0;
 
-        if (habilidad != null
-                && habilidad.equals(minijuegos[indice].getHabilidadPremiada())) {
+        if (habilidad != null && habilidad.equals(minijuegos[indice].getHabilidadPremiada())) {
 
             multiplicador = 1.5;
 
@@ -657,8 +658,7 @@ public class SistemaImpl implements ISistema {
 
                     jugador.setPuntajeMaximo(puntajeAcumulado);
 
-                    return "¡Nuevo récord! Superaste tu marca anterior de "
-                            + anterior + " puntos.";
+                    return "¡Nuevo récord! Superaste tu marca anterior de " + anterior + " puntos.";
 
                 }
 

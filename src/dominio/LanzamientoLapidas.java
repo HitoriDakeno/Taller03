@@ -1,6 +1,6 @@
 package dominio;
 
-import taller03.visitor.VisitorMinijuego;
+import visitor.VisitorMinijuego;
 /**
  * Representa el minijuego Lanzamiento de Lápidas.
  *

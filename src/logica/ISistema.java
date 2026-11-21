@@ -3,6 +3,7 @@ package logica;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import dominio.*;
 
 /**
  *

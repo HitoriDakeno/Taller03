@@ -1,7 +1,7 @@
 package dominio;
 
 
-import Taller03.visitor.VisitorMinijuego;
+import visitor.VisitorMinijuego;
 
 /**
  * Representa un monstruo de tipo HombreLobo.
