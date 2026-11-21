@@ -271,15 +271,74 @@ public class Main
 		System.out.println("5) Terminar sesión");
 		System.out.println("6) Salir");
 	}
+	
+	/**
+	 * 
+	 * Muestra los cuatro minijuegos y permite seleccionar
+	 * uno que todavia no haya sido realizado.
+	 * 
+	 */
 
+	private static void menuMinijuegos() {
 
-	private static void menuMiniJuegos()
-	{
-		// TODO Auto-generated method stub
-		
-	}
+        boolean volver = false;
+
+        while (!volver) {
+
+            System.out.println();
+
+            System.out.println("------ MINIJUEGOS ------");
+
+            for (int i = 0; i < 4; i++) {
+
+                Minijuego minijuego = system.obtenerMinijuego(i);
+
+                if (system.estaMinijuegoJugado(i)) {
+
+                    System.out.println((i + 1) + ") "
+                            + minijuego.getNombre()
+                            + " [JUGADO - "
+                            + system.obtenerPuntajeMinijuego(i)
+                            + " pts]");
+
+                } else {
+
+                    System.out.println((i + 1) + ") " + minijuego.getNombre()+ " [PENDIENTE]");
+
+                }
+
+            }
+
+            System.out.println("0) Volver");
+
+            int opcion = leerEntero("> ");
+
+            if (opcion == 0) {
+
+                volver = true;
+
+            } else if (opcion < 1 || opcion > 4) {
+
+                System.out.println("[!] Opción fuera de rango.");
+
+            } else if (system.estaMinijuegoJugado(opcion - 1)) {
+
+                System.out.println("[!] Ya jugaste "+ system.obtenerMinijuego(opcion - 1).getNombre()+ " en esta sesión.");
+
+            } else {
+
+                jugarMinijuego(opcion - 1);
+
+            }
+
+        }
+
+    }
 	
 	
+	
+
+
 	/**
 	 * Detecta las interfaces que implementa un monstruo
 	 * y muestra unicamente las habilidades disponibles.
