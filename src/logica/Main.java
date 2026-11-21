@@ -74,7 +74,7 @@ public class Main
 			while(terminar != true) {
 				mostrarMenuPrincipal();
 				
-				int opcion = leerEntero("- ");
+				int opcion = leerEntero("> ");
 				
 				switch(opcion) {
 				
@@ -116,6 +116,56 @@ public class Main
 	}
 	
 	
+	/**
+	 * 
+	 * Solicita el nombre de usuario e incia una sesion.
+	 * 
+	 * Comprueba que el nombre no este vacio
+	 * y que no contenga el caracter punto y coma
+	 * 
+	 */
+	private static void iniciarSesion()
+	{
+		String nombre = "";
+		
+		System.out.println();
+		
+		System.out.println("------------------------------------------------");
+		System.out.println("                  SPOOKY SEASON");
+		System.out.println("------------------------------------------------");
+		
+		while(nombre.length() == 0 || nombre.indexOf(";") != -1) {
+			
+			System.out.println("Ingrese su nombre de usuario: ");
+			
+			nombre = lector.nextLine();
+			
+			if(nombre.length() == 0) {
+				
+				System.out.println("El nombre no puede estar vacío.");
+				
+			} else if(nombre.indexOf(";") != -1) {
+				
+				System.out.println("El nombre no puede contener ';'");
+				
+			}
+		
+		}
+		
+		system.iniciarSesion(nombre);
+		
+		if(system.existeJugador(nombre)) {
+			System.out.println("Bienvenido de vuelta, "+ nombre + " tu record actual es de " + system.obtenerRecord(nombre) + " puntos.");
+			
+			
+		} else {
+			System.out.println("Bienvenido, "+ nombre + " es tu primera vez jugando.");
+		}
+		
+		
+	}
+
+
 	/**
 	 * lee el archivo Registros.txt
 	 * 
@@ -203,12 +253,23 @@ public class Main
 		}
 		
 	}
-
+	
+	/**
+	 * Muestra las opciones del menu principal
+	 * 
+	 */
 
 	private static void mostrarMenuPrincipal()
 	{
-		// TODO Auto-generated method stub
+		System.out.println();
 		
+		System.out.println("------ MENÚ PRINCIPAL (" + system.getNombreJugadorActual() + ") ------");
+		System.out.println("1) Jugar un minijuego");
+		System.out.println("2) Ver cátalogo de monstruos");
+		System.out.println("3) Ver historial de la sesión");
+		System.out.println("4) Ver ranking de jugadores");
+		System.out.println("5) Terminar sesión");
+		System.out.println("6) Salir");
 	}
 
 
