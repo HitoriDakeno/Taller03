@@ -1,6 +1,6 @@
 package dominio;
 
-import taller03.visitor.VisitorMinijuego;
+import Taller03.visitor.VisitorMinijuego;
 
 /**
  * Representa el minijuego Caza de Calabazas.

@@ -1,6 +1,6 @@
 package dominio;
 
-import taller03.visitor.VisitorMinijuego;
+import Taller03.visitor.VisitorMinijuego;
 
 /**
  * Representa un monstruo de tipo Vampiro.
