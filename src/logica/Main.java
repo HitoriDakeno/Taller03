@@ -3,10 +3,14 @@
 package logica;
 
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import sun.jvm.hotspot.tools.SysPropsDumper;
 
 
 /**
@@ -75,7 +79,7 @@ public class Main
 				switch(opcion) {
 				
 				case 1:
-					miniJuegos();
+					menuMiniJuegos();
 					break;
 				case 2:
 					mostrarCatalogo();
@@ -112,6 +116,95 @@ public class Main
 	}
 	
 	
+	/**
+	 * lee el archivo Registros.txt
+	 * 
+	 * si el archivo no existe, el sistema comienza
+	 * con una linea de jugadores vacia.
+	 * 
+	 */
+	
+	private static void cargarRegistros()
+	{
+		File arch = new File(archRegistros);
+		
+		if(!arch.exists()) {
+			
+			System.out.println("No se encontro "+ archRegistros);
+			return;
+		}
+		
+		try {
+			Scanner s = new Scanner(arch);
+			int numLine = 0;
+			
+			while(s.hasNextLine()) {
+				
+				String linea = s.nextLine();
+				
+				numLine++;
+				
+				String[] campos = linea.split(";", -1);
+				
+				if(!system.agregarRegistro(campos)) {
+					
+					System.out.println("linea " + numLine + "de "+ archRegistros+ " descartada: " + linea);
+				}
+		
+			}
+			s.close();
+			
+		} catch(FileNotFoundException e) {
+			System.out.println("No se pudo abrir "+archRegistros);
+		}
+		
+	}
+
+	/**
+	 * lee archivo Montruos.txt
+	 * 
+	 * Cada linea se separa mediante split y se encia al 
+	 * sistema para validar y crear el monstruo
+	 * 
+	 */
+	
+	private static void cargarMonstruos()
+	{
+		File arch = new File(archMonstruos);
+		
+		if(!arch.exists()) {
+			
+			System.out.println("No se encontro "+ archMonstruos);
+			return;
+		}
+		
+		try {
+			Scanner s = new Scanner(arch);
+			int numLine = 0;
+			
+			while(s.hasNextLine()) {
+				
+				String linea = s.nextLine();
+				
+				numLine++;
+				
+				String[] campos = linea.split(";", -1);
+				
+				if(!system.agregarMonstruo(campos)) {
+					
+					System.out.println("linea " + numLine + "de "+ archMonstruos+ " descartada: " + linea);
+				}
+		
+			}
+			s.close();
+			
+		} catch(FileNotFoundException e) {
+			System.out.println("No se pudo abrir "+archMonstruos);
+		}
+		
+	}
+
+
 	private static void mostrarMenuPrincipal()
 	{
 		// TODO Auto-generated method stub
@@ -119,11 +212,70 @@ public class Main
 	}
 
 
-	private static void miniJuegos()
+	private static void menuMiniJuegos()
 	{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	/**
+	 * Detecta las interfaces que implementa un monstruo
+	 * y muestra unicamente las habilidades disponibles.
+	 * 
+	 * 
+	 * @param monstruo monstruo seleccinado
+	 * @return habilidad seleccionada
+	 */
+	
+	private static String seleccionarHabilidad(Monstruo monstruo) {
+		ArrayList<String> habilidades = new ArrayList<String>();
+		
+		if(monstruo instanceof Mordedor) {
+			habilidades.add("Mordedor");
+		}
+		
+		if(monstruo instanceof Volador) {
+			habilidades.add("Volador");
+		}
+		
+		if(monstruo instanceof Regenerable) {
+			
+			habilidades.add("Regenerable");
+		}
+		
+		if(monstruo instanceof Furioso) {
+			habilidades.add("Furioso");
+		}
+		
+		
+		System.out.println();
+		
+		System.out.println("Quieres usar una habilidad?");
+		
+		for(int i = 0; i < habilidades.size(); i++) {
+			System.out.println((i+1) + ") "+nombreHabilidad(habilidades.get(i)));
+			
+		}
+		
+		System.out.println("0) No usar habilidad");
+		
+		int opcion = leerEntero("> ");
+		
+		if(opcion == 0) {
+			return "Ninguna";
+		}
+		
+		if(opcion < 1 || opcion > habilidades.size()) {
+			
+			System.out.println("Opcion fuera de rango.");
+			return "Ninguna";
+		}
+		
+		return habilidades.get(opcion-1);
+		
+	}
+	
 	
 	
 	/**
