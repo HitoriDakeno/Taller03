@@ -335,8 +335,119 @@ public class Main
 
     }
 	
+	/**
+	 * 
+	 * Ejecuta el procedimiento necesario para jugar
+	 * un minimenu y registra su resultado
+	 * 
+	 * @param indice posicion del minijuego seleccionado
+	 */
 	
-	
+	private static void jugarMinijuego(int indice) {
+
+        Minijuego minijuego = system.obtenerMinijuego(indice);
+
+        ArrayList<Monstruo> disponibles =
+                system.obtenerMonstruosDisponibles();
+
+        if (disponibles.size() == 0) {
+
+            System.out.println("No quedan monstruos disponibles.");
+
+            return;
+
+        }
+
+        System.out.println();
+
+        System.out.println(minijuego.getNombre() + ": " + minijuego.getDescripcion());
+
+        System.out.println();
+
+        System.out.println("Elige el monstruo en el que te transformarás:");
+
+        for (int i = 0; i < disponibles.size(); i++) {
+
+            System.out.println((i + 1) + ") " + disponibles.get(i));
+
+        }
+
+        System.out.println("0) Volver");
+
+        int opcion = leerEntero("> ");
+
+        if (opcion == 0) {
+
+            return;
+
+        }
+
+        if (opcion < 1 || opcion > disponibles.size()) {
+
+            System.out.println("Opción fuera de rango.");
+
+            return;
+
+        }
+
+        Monstruo monstruo = disponibles.get(opcion - 1);
+
+        System.out.println();
+
+        System.out.println("Te comes un dulce de dudosa procedencia...");
+
+        double potencial = system.calcularPotencial(indice, monstruo);
+
+        System.out.printf("Potencial para %s: %.2f%n",
+                minijuego.getNombre(), potencial);
+
+        String habilidad = seleccionarHabilidad(monstruo);
+
+        if (habilidad == null) {
+
+            return;
+
+        }
+
+        if (habilidad.equals("Ninguna")) {
+
+            System.out.println("No utilizaste ninguna habilidad.");
+
+            habilidad = "";
+
+        } else {
+
+            System.out.println(ejecutarHabilidad(monstruo, habilidad));
+
+            if (habilidad.equals(minijuego.getHabilidadPremiada())) {
+
+                System.out.println("¡La habilidad fue efectiva! Puntaje x1.5");
+
+            } else {
+
+                System.out.println("La habilidad no tuvo efecto en este minijuego.");
+
+            }
+
+        }
+
+        RegistroPartida registro = system.registrarResultado(indice, monstruo, habilidad);
+
+        if (registro != null) {
+
+            System.out.println();
+
+            System.out.println(">> Puntaje obtenido: "
+                    + registro.getPuntaje() + " puntos");
+
+        } else {
+
+            System.out.println("[!] No se pudo registrar el resultado.");
+
+        }
+
+    }
+
 
 
 	/**
