@@ -8,7 +8,7 @@ import taller03.visitor.VisitorMinijuego;
  * Implementa VisitorMinijuego para calcular el potencial
  * de cada uno de los cuatro tipos de monstruos.
  */
-public class CarreraCementerio implements Minijuego, VisitorMinijuego {
+public class CarreraCementerio implements MiniJuego, VisitorMinijuego {
 
     @Override
     public String getNombre() {

@@ -45,7 +45,7 @@ public interface ISistema {
 
     boolean estaMonstruoDisponible(Monstruo monstruo);
 
-    Minijuego obtenerMinijuego(int indice);
+    MiniJuego obtenerMinijuego(int indice);
 
     boolean estaMinijuegoJugado(int indice);
 

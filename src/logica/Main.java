@@ -290,7 +290,7 @@ public class Main
 
             for (int i = 0; i < 4; i++) {
 
-                Minijuego minijuego = system.obtenerMinijuego(i);
+                MiniJuego minijuego = system.obtenerMinijuego(i);
 
                 if (system.estaMinijuegoJugado(i)) {
 
@@ -344,7 +344,7 @@ public class Main
 	
 	private static void jugarMinijuego(int indice) {
 
-        Minijuego minijuego = system.obtenerMinijuego(indice);
+        MiniJuego minijuego = system.obtenerMinijuego(indice);
 
         ArrayList<Monstruo> disponibles =
                 system.obtenerMonstruosDisponibles();
