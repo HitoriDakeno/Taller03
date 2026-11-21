@@ -552,11 +552,17 @@ public class Main
 		} else if(habilidad.equals("Volador")) {
 			
 			return "Volar";
+			
 		} else if(habilidad.equals("Regenerable")) {
 			return "Regenerarse";
+			
+		} else if(habilidad.equals("Furioso")) {
+			return "Enfurecerse";
 		}
 		
-		return "Enfurecerse";
+		return habilidad;
+		
+		
 	}
 	
 	
