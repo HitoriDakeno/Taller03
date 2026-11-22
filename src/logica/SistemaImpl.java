@@ -632,13 +632,11 @@ public class SistemaImpl implements ISistema {
 
                     jugador.setPuntajeMaximo(puntajeAcumulado);
 
-                    return "¡Nuevo récord! Superaste tu marca anterior de " + anterior + " puntos.";
+                    return "Nuevo récord! Superaste tu marca anterior de " + anterior + " puntos.";
 
                 }
 
-                return "No superaste tu récord ("
-                        + jugador.getPuntajeMaximo()
-                        + "). ¡Suerte para la próxima!";
+                return "No superaste tu récord (" + jugador.getPuntajeMaximo() + "). Suerte para la próxima!";
 
             }
 
@@ -646,8 +644,7 @@ public class SistemaImpl implements ISistema {
 
         jugadores.add(new Jugador(nombreJugadorActual, puntajeAcumulado));
 
-        return "¡Jugador agregado al registro con "
-                + puntajeAcumulado + " puntos!";
+        return "Jugador agregado al registro con " + puntajeAcumulado + " puntos!";
 
     }
 
