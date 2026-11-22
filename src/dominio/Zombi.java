@@ -24,8 +24,7 @@ public class Zombi extends Monstruo implements Mordedor, Regenerable {
      * @param resistencia resistencia
      * @param fuerzaDeMordida fuerza de mordida
      */
-    public Zombi(int vida, int velocidad, int fuerza,
-                 int resistencia, int fuerzaDeMordida) {
+    public Zombi(int vida, int velocidad, int fuerza,int resistencia, int fuerzaDeMordida) {
 
         super(vida, velocidad, fuerza, resistencia);
 
@@ -43,7 +42,7 @@ public class Zombi extends Monstruo implements Mordedor, Regenerable {
     @Override
     public String morder() {
 
-        return "¡El zombi clava sus dientes con una mordida aterradora!";
+        return "El zombi clava sus dientes con una mordida aterradora!";
 
     }
 
@@ -53,7 +52,7 @@ public class Zombi extends Monstruo implements Mordedor, Regenerable {
     @Override
     public String regenerarse() {
 
-        return "¡El zombi recupera parte de su energía!";
+        return "El zombi recupera parte de su energía!";
 
     }
 
@@ -80,11 +79,7 @@ public class Zombi extends Monstruo implements Mordedor, Regenerable {
     @Override
     public String toString() {
 
-        return "Zombi | Vida " + getVida()
-                + " | Vel " + getVelocidad()
-                + " | Fue " + getFuerza()
-                + " | Res " + getResistencia()
-                + " | Mordida " + fuerzaDeMordida;
+        return "Zombi | Vida " + getVida()  + " | Vel " + getVelocidad()  + " | Fue " + getFuerza() + " | Res " + getResistencia() + " | Mordida " + fuerzaDeMordida;
 
     }
 
