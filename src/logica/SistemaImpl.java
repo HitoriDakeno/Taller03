@@ -111,10 +111,7 @@ public class SistemaImpl implements ISistema {
                 int vuelo = Integer.parseInt(campos[5]);
                 int sol = Integer.parseInt(campos[6]);
 
-                if (!validarBase(vida, velocidad, fuerza, resistencia)
-                        || !validarRango(vuelo, 1, 100)
-                        || !validarRango(sol, 1, 100)) {
-
+                if (!validarBase(vida, velocidad, fuerza, resistencia) || !validarRango(vuelo, 1, 100)  || !validarRango(sol, 1, 100)) {
                     return false;
 
                 }
@@ -131,8 +128,7 @@ public class SistemaImpl implements ISistema {
 
                 int vendajes = Integer.parseInt(campos[5]);
 
-                if (!validarBase(vida, velocidad, fuerza, resistencia)
-                        || !validarRango(vendajes, 1, 300)) {
+                if (!validarBase(vida, velocidad, fuerza, resistencia) || !validarRango(vendajes, 1, 300)) {
 
                     return false;
 
