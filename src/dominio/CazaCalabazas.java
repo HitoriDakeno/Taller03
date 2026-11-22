@@ -44,8 +44,7 @@ public class CazaCalabazas implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(Zombi zombi) {
 
-        return zombi.getFuerzaDeMordida() * zombi.getVida() / 100.0
-                + zombi.getResistencia() / 2.0;
+        return zombi.getFuerzaDeMordida() * zombi.getVida() / 100.0 + zombi.getResistencia() / 2.0;
 
     }
 
@@ -75,8 +74,7 @@ public class CazaCalabazas implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(HombreLobo hombreLobo) {
 
-        return hombreLobo.getFerocidad() * hombreLobo.getFaseLunar() / 4.0
-                + hombreLobo.getVelocidad() / 4.0;
+        return hombreLobo.getFerocidad() * hombreLobo.getFaseLunar() / 4.0 + hombreLobo.getVelocidad() / 4.0;
 
     }
 
