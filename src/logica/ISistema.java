@@ -13,7 +13,6 @@ import dominio.*;
 
 
 public interface ISistema {
-
     /**
      * Recibe los campos de un monstruo y solicita su creación.
      *

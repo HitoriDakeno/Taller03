@@ -347,8 +347,7 @@ public class Main
 
         MiniJuego minijuego = system.obtenerMinijuego(indice);
 
-        ArrayList<Monstruo> disponibles =
-                system.obtenerMonstruosDisponibles();
+        ArrayList<Monstruo> disponibles = system.obtenerMonstruosDisponibles();
 
         if (disponibles.size() == 0) {
 
@@ -364,7 +363,8 @@ public class Main
 
         System.out.println();
 
-        System.out.println("Elige el monstruo en el que te transformarás:");
+        System.out.println("---------- Elige el monstruo en el que te transformarás ---------- ");
+        System.out.println();
 
         for (int i = 0; i < disponibles.size(); i++) {
 
@@ -373,8 +373,8 @@ public class Main
         }
 
         System.out.println("0) Volver");
-
-        int opcion = leerEntero("> ");
+        System.out.println();
+        int opcion = leerEntero("Opcion: ");
 
         if (opcion == 0) {
 
@@ -398,8 +398,7 @@ public class Main
 
         double potencial = system.calcularPotencial(indice, monstruo);
 
-        System.out.printf("Potencial para %s: %.2f%n",
-                minijuego.getNombre(), potencial);
+        System.out.printf("Potencial para %s: %.2f%n", minijuego.getNombre(), potencial);
 
         String habilidad = seleccionarHabilidad(monstruo);
 
