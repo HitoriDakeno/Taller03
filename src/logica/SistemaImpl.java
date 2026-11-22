@@ -146,9 +146,7 @@ public class SistemaImpl implements ISistema {
                 int ferocidad = Integer.parseInt(campos[5]);
                 int luna = Integer.parseInt(campos[6]);
 
-                if (!validarBase(vida, velocidad, fuerza, resistencia)
-                        || !validarRango(ferocidad, 1, 100)
-                        || !validarRango(luna, 1, 4)) {
+                if (!validarBase(vida, velocidad, fuerza, resistencia) || !validarRango(ferocidad, 1, 100) || !validarRango(luna, 1, 4)) {
 
                     return false;
 
