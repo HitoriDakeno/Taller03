@@ -25,9 +25,7 @@ public class Vampiro extends Monstruo implements Mordedor, Volador {
      * @param velocidadDeVuelo velocidad de vuelo
      * @param resistenciaAlSol resistencia al sol
      */
-    public Vampiro(int vida, int velocidad, int fuerza,
-                   int resistencia, int velocidadDeVuelo,
-                   int resistenciaAlSol) {
+    public Vampiro(int vida, int velocidad, int fuerza, int resistencia, int velocidadDeVuelo, int resistenciaAlSol) {
 
         super(vida, velocidad, fuerza, resistencia);
 
@@ -47,14 +45,14 @@ public class Vampiro extends Monstruo implements Mordedor, Volador {
     @Override
     public String morder() {
 
-        return "¡El vampiro ataca con sus colmillos!";
+        return "El vampiro ataca con sus colmillos!";
 
     }
 
     @Override
     public String volar() {
 
-        return "¡El vampiro despliega sus alas y surca el aire!";
+        return "El vampiro despliega sus alas y surca el aire!";
 
     }
 
@@ -78,12 +76,7 @@ public class Vampiro extends Monstruo implements Mordedor, Volador {
     @Override
     public String toString() {
 
-        return "Vampiro | Vida " + getVida()
-                + " | Vel " + getVelocidad()
-                + " | Fue " + getFuerza()
-                + " | Res " + getResistencia()
-                + " | Vuelo " + velocidadDeVuelo
-                + " | Sol " + resistenciaAlSol;
+        return "Vampiro | Vida " + getVida()  + " | Vel " + getVelocidad() + " | Fue " + getFuerza() + " | Res " + getResistencia()+ " | Vuelo " + velocidadDeVuelo+ " | Sol " + resistenciaAlSol;
 
     }
 
