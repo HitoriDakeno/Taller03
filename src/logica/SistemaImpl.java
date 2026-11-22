@@ -489,12 +489,7 @@ public class SistemaImpl implements ISistema {
 
         }
 
-        RegistroPartida registro = new RegistroPartida(
-                minijuegos[indice].getNombre(),
-                monstruo.getTipo(),
-                habilidadGuardada,
-                puntaje
-        );
+        RegistroPartida registro = new RegistroPartida(minijuegos[indice].getNombre(), monstruo.getTipo(), habilidadGuardada, puntaje);
 
         historial.add(registro);
 
