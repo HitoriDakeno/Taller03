@@ -287,7 +287,7 @@ public class Main
 
             System.out.println();
 
-            System.out.println("------ MINIJUEGOS ------");
+            System.out.println("''''' MINIJUEGOS '''''");
 
             for (int i = 0; i < 4; i++) {
 
@@ -303,7 +303,7 @@ public class Main
 
                 } else {
 
-                    System.out.println((i + 1) + ") " + minijuego.getNombre()+ " [PENDIENTE]");
+                    System.out.println((i + 1) + ") " + minijuego.getNombre()+ " [NO JUGADO]");
 
                 }
 
@@ -311,7 +311,7 @@ public class Main
 
             System.out.println("0) Volver");
 
-            int opcion = leerEntero("> ");
+            int opcion = leerEntero("Opcion: ");
 
             if (opcion == 0) {
 
