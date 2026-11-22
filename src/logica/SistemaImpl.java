@@ -459,8 +459,7 @@ public class SistemaImpl implements ISistema {
      * @return registro creado o null si no se pudo realizar
      */
     @Override
-    public RegistroPartida registrarResultado(int indice,
-            Monstruo monstruo, String habilidad) {
+    public RegistroPartida registrarResultado(int indice,Monstruo monstruo, String habilidad) {
 
         if (indice < 0 || indice >= minijuegos.length || monstruo == null || estaMinijuegoJugado(indice) || !estaMonstruoDisponible(monstruo)) {
 
