@@ -463,10 +463,7 @@ public class SistemaImpl implements ISistema {
     public RegistroPartida registrarResultado(int indice,
             Monstruo monstruo, String habilidad) {
 
-        if (indice < 0 || indice >= minijuegos.length
-                || monstruo == null
-                || estaMinijuegoJugado(indice)
-                || !estaMonstruoDisponible(monstruo)) {
+        if (indice < 0 || indice >= minijuegos.length || monstruo == null || estaMinijuegoJugado(indice) || !estaMonstruoDisponible(monstruo)) {
 
             return null;
 
