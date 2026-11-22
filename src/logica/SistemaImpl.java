@@ -176,10 +176,7 @@ public class SistemaImpl implements ISistema {
      */
     private boolean validarBase(int vida, int velocidad, int fuerza, int resistencia) {
 
-        return validarRango(vida, 1, 200)
-                && validarRango(velocidad, 1, 100)
-                && validarRango(fuerza, 1, 100)
-                && validarRango(resistencia, 1, 100);
+        return validarRango(vida, 1, 200) && validarRango(velocidad, 1, 100) && validarRango(fuerza, 1, 100)  && validarRango(resistencia, 1, 100);
 
     }
 
