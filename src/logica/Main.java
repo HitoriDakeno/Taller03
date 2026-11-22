@@ -286,8 +286,10 @@ public class Main
         while (!volver) {
 
             System.out.println();
-
-            System.out.println("''''' MINIJUEGOS '''''");
+            System.out.println("===================================");
+            System.out.println("       ''''' MINIJUEGOS '''''");
+            System.out.println("===================================");
+            System.out.println();
 
             for (int i = 0; i < 4; i++) {
 
@@ -306,7 +308,7 @@ public class Main
             }
 
             System.out.println("0) Volver");
-
+            System.out.println("");
             int opcion = leerEntero("Opcion: ");
 
             if (opcion == 0) {

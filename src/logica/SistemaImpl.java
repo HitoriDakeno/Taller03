@@ -116,8 +116,7 @@ public class SistemaImpl implements ISistema {
 
                 }
 
-                monstruos.add(new Vampiro(vida, velocidad, fuerza,
-                        resistencia, vuelo, sol));
+                monstruos.add(new Vampiro(vida, velocidad, fuerza, resistencia, vuelo, sol));
 
             } else if (tipo.equals("Momia") && campos.length == 6) {
 
