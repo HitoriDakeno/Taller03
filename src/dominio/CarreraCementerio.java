@@ -57,8 +57,7 @@ public class CarreraCementerio implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(Vampiro vampiro) {
 
-        return (vampiro.getVelocidad()
-                + 2.0 * vampiro.getVelocidadDeVuelo()) / 2.0;
+        return (vampiro.getVelocidad() + 2.0 * vampiro.getVelocidadDeVuelo()) / 2.0;
 
     }
 
@@ -68,8 +67,7 @@ public class CarreraCementerio implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(Momia momia) {
 
-        return momia.getVelocidad() * 100.0
-                / (100.0 + momia.getLongitudVendajes());
+        return momia.getVelocidad() * 100.0 / (100.0 + momia.getLongitudVendajes());
 
     }
 
@@ -79,9 +77,7 @@ public class CarreraCementerio implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(HombreLobo hombreLobo) {
 
-        return (hombreLobo.getVelocidad()
-                + hombreLobo.getFerocidad() / 5.0)
-                * hombreLobo.getFaseLunar() / 4.0;
+        return (hombreLobo.getVelocidad()+ hombreLobo.getFerocidad() / 5.0) * hombreLobo.getFaseLunar() / 4.0;
 
     }
 
