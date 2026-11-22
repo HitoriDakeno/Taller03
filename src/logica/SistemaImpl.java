@@ -225,9 +225,7 @@ public class SistemaImpl implements ISistema {
             String nombre = campos[0];
             int puntaje = Integer.parseInt(campos[1]);
 
-            if (nombre.length() == 0
-                    || nombre.indexOf(';') != -1
-                    || puntaje < 0) {
+            if (nombre.length() == 0 || nombre.indexOf(';') != -1 || puntaje < 0) {
 
                 return false;
 
