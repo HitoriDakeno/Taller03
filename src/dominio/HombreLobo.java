@@ -26,7 +26,6 @@ public class HombreLobo extends Monstruo implements Mordedor, Furioso {
      * @param faseLunar fase de la luna
      */
     public HombreLobo(int vida, int velocidad, int fuerza, int resistencia, int ferocidad, int faseLunar) {
-
         super(vida, velocidad, fuerza, resistencia);
 
         this.ferocidad = ferocidad;
@@ -45,14 +44,14 @@ public class HombreLobo extends Monstruo implements Mordedor, Furioso {
     @Override
     public String morder() {
 
-        return "¡El hombre lobo ataca con una mordida salvaje!";
+        return "El hombre lobo ataca con una mordida salvaje!";
 
     }
 
     @Override
     public String enfurecerse() {
 
-        return "¡El hombre lobo aumenta su ferocidad!";
+        return "El hombre lobo aumenta su ferocidad!";
 
     }
 
