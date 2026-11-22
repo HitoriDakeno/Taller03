@@ -134,8 +134,7 @@ public class SistemaImpl implements ISistema {
 
                 }
 
-                monstruos.add(new Momia(vida, velocidad, fuerza,
-                        resistencia, vendajes));
+                monstruos.add(new Momia(vida, velocidad, fuerza, resistencia, vendajes));
 
             } else if (tipo.equals("HombreLobo") && campos.length == 7) {
 
