@@ -53,8 +53,7 @@ public class LanzamientoLapidas implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(Vampiro vampiro) {
 
-        return vampiro.getFuerza()
-                + vampiro.getVelocidadDeVuelo() / 4.0;
+        return vampiro.getFuerza() + vampiro.getVelocidadDeVuelo() / 4.0;
 
     }
 
@@ -64,8 +63,7 @@ public class LanzamientoLapidas implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(Momia momia) {
 
-        return momia.getFuerza()
-                + momia.getLongitudVendajes() / 10.0;
+        return momia.getFuerza() + momia.getLongitudVendajes() / 10.0;
 
     }
 
@@ -75,9 +73,7 @@ public class LanzamientoLapidas implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(HombreLobo hombreLobo) {
 
-        return hombreLobo.getFuerza()
-                + hombreLobo.getFerocidad()
-                * hombreLobo.getFaseLunar() / 8.0;
+        return hombreLobo.getFuerza() + hombreLobo.getFerocidad() * hombreLobo.getFaseLunar() / 8.0;
 
     }
 
