@@ -543,8 +543,7 @@ public class SistemaImpl implements ISistema {
                 Jugador actual = ranking.get(j);
                 Jugador mayor = ranking.get(posicionMayor);
 
-                if (actual.getPuntajeMaximo() > mayor.getPuntajeMaximo() || (actual.getPuntajeMaximo() == mayor.getPuntajeMaximo() 
-                		&& actual.getNombre().compareToIgnoreCase(mayor.getNombre()) < 0)) {
+                if (actual.getPuntajeMaximo() > mayor.getPuntajeMaximo() || (actual.getPuntajeMaximo() == mayor.getPuntajeMaximo() && actual.getNombre().compareToIgnoreCase(mayor.getNombre()) < 0)) {
 
                     posicionMayor = j;
 
