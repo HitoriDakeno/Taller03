@@ -295,15 +295,11 @@ public class Main
 
                 if (system.estaMinijuegoJugado(i)) {
 
-                    System.out.println((i + 1) + ") "
-                            + minijuego.getNombre()
-                            + " [JUGADO - "
-                            + system.obtenerPuntajeMinijuego(i)
-                            + " pts]");
+                    System.out.println((i + 1) + ") " + minijuego.getNombre()+ " <JUGADO - " + system.obtenerPuntajeMinijuego(i) + " pts>");
 
                 } else {
 
-                    System.out.println((i + 1) + ") " + minijuego.getNombre()+ " [NO JUGADO]");
+                    System.out.println((i + 1) + ") " + minijuego.getNombre()+ " <NO JUGADO>");
 
                 }
 
@@ -420,7 +416,7 @@ public class Main
 
             if (habilidad.equals(minijuego.getHabilidadPremiada())) {
 
-                System.out.println("¡La habilidad fue efectiva! Puntaje x1.5");
+                System.out.println("La habilidad fue efectiva! Puntaje x1.5");
 
             } else {
 
@@ -436,8 +432,7 @@ public class Main
 
             System.out.println();
 
-            System.out.println(">> Puntaje obtenido: "
-                    + registro.getPuntaje() + " puntos");
+            System.out.println("=> Puntaje obtenido: " + registro.getPuntaje() + " puntos");
 
         } else {
 
@@ -511,9 +506,6 @@ public class Main
 	/**
 	 * Ejecuta la habilidad seleccionada meadiante un cast
 	 * a la interfaz correspondiente.
-	 * 
-	 * 
-	 * 
 	 * 
 	 * @param monstruo monstruo que utiliza la habilidad
 	 * @param habilidad habilidad seleccionada
