@@ -54,8 +54,7 @@ public class SobrevivirAmanecer implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(Vampiro vampiro) {
 
-        return vampiro.getResistencia()
-                * vampiro.getResistenciaAlSol() / 100.0;
+        return vampiro.getResistencia() * vampiro.getResistenciaAlSol() / 100.0;
 
     }
 
@@ -65,8 +64,7 @@ public class SobrevivirAmanecer implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(Momia momia) {
 
-        return ((momia.getResistencia() + momia.getVida()) / 2.0)
-                * (1.0 + momia.getLongitudVendajes() / 300.0);
+        return ((momia.getResistencia() + momia.getVida()) / 2.0) * (1.0 + momia.getLongitudVendajes() / 300.0);
 
     }
 
@@ -76,8 +74,7 @@ public class SobrevivirAmanecer implements MiniJuego, VisitorMinijuego {
     @Override
     public double visitar(HombreLobo hombreLobo) {
 
-        return ((hombreLobo.getResistencia() + hombreLobo.getVida()) / 2.0)
-                * (5.0 - hombreLobo.getFaseLunar()) / 4.0;
+        return ((hombreLobo.getResistencia() + hombreLobo.getVida()) / 2.0) * (5.0 - hombreLobo.getFaseLunar()) / 4.0;
 
     }
 
