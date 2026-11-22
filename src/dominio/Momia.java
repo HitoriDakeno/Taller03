@@ -21,8 +21,7 @@ public class Momia extends Monstruo implements Regenerable, Furioso {
      * @param resistencia resistencia
      * @param longitudVendajes longitud de los vendajes
      */
-    public Momia(int vida, int velocidad, int fuerza,
-                 int resistencia, int longitudVendajes) {
+    public Momia(int vida, int velocidad, int fuerza,int resistencia, int longitudVendajes) {
 
         super(vida, velocidad, fuerza, resistencia);
 
@@ -37,14 +36,14 @@ public class Momia extends Monstruo implements Regenerable, Furioso {
     @Override
     public String regenerarse() {
 
-        return "¡La momia recompone sus vendajes y se recupera!";
+        return "La momia recompone sus vendajes y se recupera!";
 
     }
 
     @Override
     public String enfurecerse() {
 
-        return "¡La momia libera toda su furia ancestral!";
+        return "La momia libera toda su furia ancestral!";
 
     }
 
@@ -68,11 +67,7 @@ public class Momia extends Monstruo implements Regenerable, Furioso {
     @Override
     public String toString() {
 
-        return "Momia | Vida " + getVida()
-                + " | Vel " + getVelocidad()
-                + " | Fue " + getFuerza()
-                + " | Res " + getResistencia()
-                + " | Vendajes " + longitudVendajes;
+        return "Momia | Vida " + getVida()  + " | Vel " + getVelocidad()  + " | Fue " + getFuerza()+ " | Res " + getResistencia() + " | Vendajes " + longitudVendajes;
 
     }
 
