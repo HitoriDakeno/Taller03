@@ -152,11 +152,9 @@ public class SistemaImpl implements ISistema {
 
                 }
 
-                monstruos.add(new HombreLobo(vida, velocidad, fuerza,
-                        resistencia, ferocidad, luna));
+                monstruos.add(new HombreLobo(vida, velocidad, fuerza, resistencia, ferocidad, luna));
 
             } else {
-
                 return false;
 
             }
