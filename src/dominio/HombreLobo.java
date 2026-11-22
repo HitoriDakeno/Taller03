@@ -9,7 +9,6 @@ import visitor.VisitorMinijuego;
  * Implementa las habilidades Mordedor y Furioso.
  */
 public class HombreLobo extends Monstruo implements Mordedor, Furioso {
-
     /** Nivel de ferocidad del hombre lobo. */
     private int ferocidad;
 
@@ -26,8 +25,7 @@ public class HombreLobo extends Monstruo implements Mordedor, Furioso {
      * @param ferocidad nivel de ferocidad
      * @param faseLunar fase de la luna
      */
-    public HombreLobo(int vida, int velocidad, int fuerza,
-                      int resistencia, int ferocidad, int faseLunar) {
+    public HombreLobo(int vida, int velocidad, int fuerza, int resistencia, int ferocidad, int faseLunar) {
 
         super(vida, velocidad, fuerza, resistencia);
 
@@ -78,12 +76,7 @@ public class HombreLobo extends Monstruo implements Mordedor, Furioso {
     @Override
     public String toString() {
 
-        return "HombreLobo | Vida " + getVida()
-                + " | Vel " + getVelocidad()
-                + " | Fue " + getFuerza()
-                + " | Res " + getResistencia()
-                + " | Ferocidad " + ferocidad
-                + " | Luna " + faseLunar;
+        return "HombreLobo | Vida " + getVida() + " | Vel " + getVelocidad()  + " | Fue " + getFuerza() + " | Res " + getResistencia()  + " | Ferocidad " + ferocidad + " | Luna " + faseLunar;
 
     }
 
