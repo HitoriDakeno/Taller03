@@ -93,15 +93,13 @@ public class SistemaImpl implements ISistema {
 
                 int mordida = Integer.parseInt(campos[5]);
 
-                if (!validarBase(vida, velocidad, fuerza, resistencia)
-                        || !validarRango(mordida, 1, 100)) {
+                if (!validarBase(vida, velocidad, fuerza, resistencia) || !validarRango(mordida, 1, 100)) {
 
                     return false;
 
                 }
 
-                monstruos.add(new Zombi(vida, velocidad, fuerza,
-                        resistencia, mordida));
+                monstruos.add(new Zombi(vida, velocidad, fuerza, resistencia, mordida));
 
             } else if (tipo.equals("Vampiro") && campos.length == 7) {
 
