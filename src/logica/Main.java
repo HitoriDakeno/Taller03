@@ -73,8 +73,8 @@ public class Main
 			
 			while(terminar != true) {
 				mostrarMenuPrincipal();
-				
-				int opcion = leerEntero("> ");
+				System.out.println();
+				int opcion = leerEntero("Ingrese una opcion: ");
 				
 				switch(opcion) {
 				
@@ -177,13 +177,7 @@ public class Main
 	private static void cargarRegistros()
 	{
 		File arch = new File(archRegistros);
-		
-		if(!arch.exists()) {
-			
-			System.out.println("No se encontro "+ archRegistros);
-			return;
-		}
-		
+	
 		try {
 			Scanner s = new Scanner(arch);
 			int numLine = 0;
@@ -194,17 +188,16 @@ public class Main
 				
 				numLine++;
 				
-				String[] campos = linea.split(";", -1);
+				String[] campos = linea.split(";");
 				
 				if(!system.agregarRegistro(campos)) {
-					
 					System.out.println("linea " + numLine + " de "+ archRegistros+ " descartada: " + linea);
 				}
 		
 			}
 			s.close();
 			
-		} catch(FileNotFoundException e) {
+		} catch(IOException e) {
 			System.out.println("No se pudo abrir "+archRegistros);
 		}
 		
@@ -221,13 +214,7 @@ public class Main
 	private static void cargarMonstruos()
 	{
 		File arch = new File(archMonstruos);
-		
-		if(!arch.exists()) {
 			
-			System.out.println("No se encontro "+ archMonstruos);
-			return;
-		}
-		
 		try {
 			Scanner s = new Scanner(arch);
 			int numLine = 0;
@@ -238,7 +225,7 @@ public class Main
 				
 				numLine++;
 				
-				String[] campos = linea.split(";", -1);
+				String[] campos = linea.split(";");
 				
 				if(!system.agregarMonstruo(campos)) {
 					
