@@ -530,7 +530,7 @@ public class Main
 	 */
 	private static String nombreHabilidad(String habilidad) {
 		
-		if(habilidad.equals("Mordedor)")) {
+		if(habilidad.equals("Mordedor")) {
 			return "Morder";
 			
 		} else if(habilidad.equals("Volador")) {

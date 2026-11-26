@@ -479,12 +479,32 @@ public class SistemaImpl implements ISistema {
 
         int puntaje = (int) Math.round(potencial * 10.0 * multiplicador);
 
-        String habilidadGuardada = habilidad;
-
-        if (habilidadGuardada == null || habilidadGuardada.length() == 0) {
-
-            habilidadGuardada = "Ninguna";
-
+        String habilidadGuardada;
+        
+        if(habilidad == null || habilidad.length() == 0 || habilidad.equals("Ninguna")) {
+        	
+        		habilidadGuardada = "Ninguna";
+        		
+        } else if(habilidad.equals("Mordedor")) {
+        		
+        		habilidadGuardada = "Morder";
+        		
+        } else if(habilidad.equals("Volador")) {
+        		
+        		habilidadGuardada = "Volar";
+       
+        } else if(habilidad.equals("Regenerable")) {
+        		
+        		habilidadGuardada = "Regenerarse";
+        		
+        } else if(habilidad.equals("Furioso")) {
+        		
+        		habilidadGuardada = "Enfurecerse";
+        		
+        } else {
+        		
+        		habilidadGuardada = habilidad;
+        		
         }
 
         RegistroPartida registro = new RegistroPartida(minijuegos[indice].getNombre(), monstruo.getTipo(), habilidadGuardada, puntaje);
