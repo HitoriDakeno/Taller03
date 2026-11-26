@@ -562,6 +562,7 @@ public class Main
 		System.out.println();
 		
 		System.out.println(" //// CATÁLOGO DE MONSTRUOS \\\\");
+		System.out.println();
 		
 		for(int i = 0; i < monstruos.size(); i++) {
 			
@@ -645,6 +646,7 @@ public class Main
 		System.out.println();
 		
 		System.out.println(" //// HISTORIAL DE LA SESIÓN \\\\");
+		System.out.println();
 		
 		if(historial.size() == 0) {
 			
@@ -684,6 +686,7 @@ public class Main
 		
 		System.out.println(" //// RANKING \\\\");
 		
+		System.out.println();
 		if(ranking.size() == 0) {
 			
 			System.out.println("Todavia no hay jugadores registrados.");
