@@ -349,7 +349,7 @@ public class Main
 
         System.out.println("---------- Elige el monstruo en el que te transformarás ---------- ");
         System.out.println();
-
+        
         for (int i = 0; i < disponibles.size(); i++) {
 
             System.out.println((i + 1) + ") " + disponibles.get(i));
@@ -358,23 +358,28 @@ public class Main
 
         System.out.println("0) Volver");
         System.out.println();
-        int opcion = leerEntero("Opcion: ");
-
-        if (opcion == 0) {
-
-            return;
-
+        
+        int opcion;
+        
+        while (true) {
+     
+        		opcion = leerEntero("Opcion: ");
+        		
+        		if (opcion == 0) {
+        			return;
+        		
+        		}
+        		
+        		if (opcion < 1 || opcion > disponibles.size()) {
+        			System.out.println("Opción fuera de rango, intente nuevamente.");
+        		} else {
+        			break;
+        		}
         }
-
-        if (opcion < 1 || opcion > disponibles.size()) {
-
-            System.out.println("Opción fuera de rango.");
-
-            return;
-
-        }
-
-        Monstruo monstruo = disponibles.get(opcion - 1);
+        
+        Monstruo monstruo = disponibles.get(opcion-1);
+        
+        
 
         System.out.println();
 
@@ -543,8 +548,6 @@ public class Main
 		
 		
 	}
-	
-	
 	
 	
 	/**
