@@ -4,7 +4,6 @@ package logica;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -187,7 +186,7 @@ public class Main
 				String linea = s.nextLine();
 				
 				numLine++;
-				
+				 
 				String[] campos = linea.split(";");
 				
 				if(!system.agregarRegistro(campos)) {
@@ -235,7 +234,7 @@ public class Main
 			}
 			s.close();
 			
-		} catch(FileNotFoundException e) {
+		} catch(IOException e) {
 			System.out.println("No se pudo abrir "+archMonstruos);
 		}
 		
