@@ -6,3 +6,4 @@ MomiaFeliz;2990
 Calabacin;4580
 ola;1100
 fdsfs;600
+HitoriDakeno;1100

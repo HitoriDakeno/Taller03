@@ -386,7 +386,7 @@ public class Main
         System.out.println("Te comes un dulce de dudosa procedencia...");
 
         double potencial = system.calcularPotencial(indice, monstruo);
-
+      
         System.out.printf("Potencial para %s: %.2f%n", minijuego.getNombre(), potencial);
 
         String habilidad = seleccionarHabilidad(monstruo);

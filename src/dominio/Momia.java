@@ -9,7 +9,7 @@ import visitor.VisitorMinijuego;
  */
 public class Momia extends Monstruo implements Regenerable, Furioso {
 
-    /** Longitud de los vendajes de la momia. */
+    // Longitud de los vendajes de la momia. 
     private int longitudVendajes;
 
     /**
